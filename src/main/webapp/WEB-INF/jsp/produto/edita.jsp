@@ -9,10 +9,9 @@
 <title>Editar Produto</title>
 </head>
 <body>
-	<form action="altera">
+	<form action="<c:url value="/produtos"/>" method="POST">
 		<fieldset>
 			<legend>Editar Produto</legend>
-			<input type="hidden" name="produto.id" value="${produto.id}"/> 
 			<label for="nome">Nome:</label> 
 			<input id="nome" type="text"name="produto.nome" value="${produto.nome}"/>
 			 <label for="descricao">Descrição:</label>
