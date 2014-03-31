@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
+
 import vraptor.carrinhodecompras.modelo.Produto;
 import br.com.caelum.vraptor.ioc.Component;
 
@@ -34,12 +37,19 @@ public class ProdutoDao {
 		transaction.commit();
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<Produto> listaProduto(){
 		return this.session.createCriteria(Produto.class).list();
 	}
 	
 	public Produto carrega(Long id){
 		return (Produto) this.session.load(Produto.class, id);
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Produto> busca(String nome) {
+		return session.createCriteria(Produto.class).add(Restrictions.ilike
+				("nome", nome, MatchMode.ANYWHERE)).list();
 	}
 	
 }	

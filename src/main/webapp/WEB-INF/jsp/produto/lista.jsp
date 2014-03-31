@@ -9,6 +9,7 @@
 <title>Lista de Produtos</title>
 </head>
 <body>
+<a href="<c:url value="/produtos/novo"/>">Novo Produto</a>
 	<table>
 		<thead>
 			<tr>

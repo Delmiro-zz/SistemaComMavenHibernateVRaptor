@@ -16,7 +16,15 @@
 	</ul>
 </div>
 <body>
-	<form action='<c:url value="/produtos"/>'method="post">
+	<ul>
+		<li><a href="<c:url value="/produtos/novo"/>">Novo Produto</a></li>
+		<li><a href="<c:url value="/produtos"/>">Lista Produtos</a></li>
+		<li>Busca Produto:
+			<form action="<c:url value="/produto/busca"/>">
+				<input name="nome" /><button type="submit">Buscar</button>
+			</form></li>
+	</ul>
+	<form id="produtosForm" action='<c:url value="/produtos"/>'method="post">
 		<fieldset>
 			<legend>Adicionar Produto</legend>
 			<label>Nome:</label> <input id="nome" type="text"

@@ -2,8 +2,6 @@ package vraptor.carrinhodecompras.controller;
 
 import java.util.List;
 
-import javax.annotation.PostConstruct;
-
 import vraptor.carrinhodecompras.dao.ProdutoDao;
 import vraptor.carrinhodecompras.modelo.Produto;
 import br.com.caelum.vraptor.Delete;
@@ -69,5 +67,10 @@ public class ProdutoController {
 		dao.salva(produto);
 		result.redirectTo(this).lista();
 	}
-
+	
+	public List<Produto> busca(String nome){
+		result.include("nome", nome);
+		return dao.busca(nome);
+	}
+	
 }
