@@ -14,6 +14,7 @@
 
 <title>Cadastro de Produto</title>
 </head>
+<div  class="form-group"  >
 <div id="erros">
 	<ul>
 		<c:forEach items="${errors}" var="error">
@@ -22,24 +23,32 @@
 	</ul>
 </div>
 <body>
+<style>
+body{
+	background-color:#BFB8B8;
+}
+</style>
+
 	<ul>
 		<li><a class="btn btn-link" href="<c:url value="/produtos/novo"/>">Novo Produto</a></li>
 		<li><a class="btn btn-link" href="<c:url value="/produtos"/>">Lista Produtos</a></li>
 		<li>Busca Produto:
 			 <form action="<c:url value="/produto/busca"/>">
-				<input name="nome" /> <button type="submit" class="btn btn-default" > Buscar</button>
+				<input name="nome" /> <button class= "btn btn-primary"  type="submit" class="btn btn-default" > Buscar</button>
 			</form></li>
 	</ul>
 	<form id="produtosForm"  action='<c:url value="/produtos"/>'method="post">
 		<fieldset>
 			<legend>Adicionar Produto</legend>
-			<label>Nome:</label> <input class="input-lg" id="nome" type="text"
-				name="produto.nome" /> ˜ <label for="descricao">Descrição:</label>
-			<textarea id="descricao" name="produto.descricao"></textarea>
-			<label for="preco">Preço:</label> <input id="preco" type="text"
-				name="produto.preco" />
-			<button type="submit" class="btn btn-default">Enviar</button>
+			<label>Nome</label> 
+			<input id="nome" type="text" name="produto.nome" /> ˜ 
+			<label for="descricao">Descri&ccedil;&atilde;o</label>
+			<input id="descricao" name="produto.descricao"/>
+			<label for="preco">Preço</label> 
+			<input id="preco" type="text" name="produto.preco" />
+			<button class= "btn btn-primary" type="submit" class="btn btn-default">Enviar</button>
 		</fieldset>
-	</form>
+	</div>
+</form>	
 </body>
 </html>
