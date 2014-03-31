@@ -52,13 +52,13 @@ public class ProdutoController {
 		validator.checking(new Validations() {
 			{
 				that(produto.getNome() != null
-						&& produto.getNome().length() >= 3, "Atenção",
+						&& produto.getNome().length() >= 3, "Atencao",
 						"nome.obrigatorio");
 				that(produto.getDescricao() != null
 						&& produto.getDescricao().length() <= 40
-						&& produto.getDescricao().length() >= 4, "Atenção",
+						&& produto.getDescricao().length() >= 4, "Atencao",
 						"descricao.obrigatorio");
-				that(produto.getPreco() != null, "Atenção", "preco.obrigatorio");
+				that(produto.getPreco() != null, "Atencao", "preco.obrigatorio");
 
 			}
 		});

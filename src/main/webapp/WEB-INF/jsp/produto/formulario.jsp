@@ -6,6 +6,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<link rel="stylesheet" href="../bootstrap-3.1.1-dist/css/bootstrap.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="../bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+
 <title>Cadastro de Produto</title>
 </head>
 <div id="erros">
@@ -17,22 +23,22 @@
 </div>
 <body>
 	<ul>
-		<li><a href="<c:url value="/produtos/novo"/>">Novo Produto</a></li>
-		<li><a href="<c:url value="/produtos"/>">Lista Produtos</a></li>
+		<li><a class="btn btn-link" href="<c:url value="/produtos/novo"/>">Novo Produto</a></li>
+		<li><a class="btn btn-link" href="<c:url value="/produtos"/>">Lista Produtos</a></li>
 		<li>Busca Produto:
-			<form action="<c:url value="/produto/busca"/>">
-				<input name="nome" /><button type="submit">Buscar</button>
+			 <form action="<c:url value="/produto/busca"/>">
+				<input name="nome" /> <button type="submit" class="btn btn-default" > Buscar</button>
 			</form></li>
 	</ul>
-	<form id="produtosForm" action='<c:url value="/produtos"/>'method="post">
+	<form id="produtosForm"  action='<c:url value="/produtos"/>'method="post">
 		<fieldset>
 			<legend>Adicionar Produto</legend>
-			<label>Nome:</label> <input id="nome" type="text"
+			<label>Nome:</label> <input class="input-lg" id="nome" type="text"
 				name="produto.nome" /> ˜ <label for="descricao">Descrição:</label>
 			<textarea id="descricao" name="produto.descricao"></textarea>
 			<label for="preco">Preço:</label> <input id="preco" type="text"
 				name="produto.preco" />
-			<button type="submit">Enviar</button>
+			<button type="submit" class="btn btn-default">Enviar</button>
 		</fieldset>
 	</form>
 </body>
