@@ -57,12 +57,12 @@ body{
 </body>
 <script>
 $(document).ready(function(){
-    $("#formID").validationEngine();
+    $("#formID").validationEngine('attach', {promptPosition : "centerRight", scroll: false});
    });
 </script>
 <script>
 $(document).ready(function(){
-    $("#formBusca").validationEngine();
+    $("#formBusca").validationEngine('attach', {promptPosition : "centerRight", scroll: false});
    });
 </script>
 </html>
