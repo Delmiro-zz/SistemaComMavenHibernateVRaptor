@@ -1,4 +1,4 @@
-package vraptor.carrinhodecompras.controller;
+package vraptor.carrinhodecompras.Controller;
 
 import java.util.List;
 

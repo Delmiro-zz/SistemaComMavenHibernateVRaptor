@@ -52,4 +52,7 @@ public class ProdutoDao {
 				("nome", nome, MatchMode.ANYWHERE)).list();
 	}
 	
+	public void recarrega(Produto produto) {
+		session.refresh(produto);
+	}
 }	
