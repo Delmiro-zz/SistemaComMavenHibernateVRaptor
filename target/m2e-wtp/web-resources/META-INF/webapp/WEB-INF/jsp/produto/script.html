@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	$(document).ready(function() {
+		$("#formID").validationEngine('attach', {
+			promptPosition : "centerRight",
+			scroll : false
+		});
+	});
+</script>
+<script>
+	$(document).ready(function() {
+		$("#formBusca").validationEngine('attach', {
+			promptPosition : "centerRight",
+			scroll : false
+		});
+	});
+</script>
+<script type="text/javascript" charset="utf-8">
+		$(function(){
+			$('#busca').puts('Busca produto');
+		});
+</script>
+<script type="text/javascript">
+$("#busca").autocomplete('<c:url value="/SistemaComMavenHibernateVRaptor-master/produtos/busca.json"/>',
+		dataType: "json",
+		parse: function(produtos) {
+			return $.map(produtos, function(produto) {
+			return {
+			data: produto,
+			value: produto.nome,
+			result: produto.nome
+			};
+			});
+			},
+			formatItem: function(produto) {
+			return produto.nome + "(" + produto.preco + ")";
+			}
+			});
+</script>
+</head>
+</html>

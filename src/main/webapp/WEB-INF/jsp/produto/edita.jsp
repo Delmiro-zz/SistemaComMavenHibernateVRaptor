@@ -21,5 +21,13 @@
 			<button type="submit">Enviar</button>
 		</fieldset>
 	</form>
+	<form action="<c:url value="/produtos/${produto.id }/imagem"/>"
+		method="POST" enctype="multipart/form-data">
+		<fieldset>
+			<legend>Upload de Imagem</legend>
+			<input type="file" name="imagem" />
+			<button type="submit">Enviar</button>
+		</fieldset>
+	</form>
 </body>
 </html>
